@@ -1,0 +1,152 @@
+body {
+  background-color: #f9fafb;
+  font-family: "Arial", sans-serif;
+}
+.offer-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+
+  #off1 {
+    border-color: gray;
+  }
+  #off2 {
+    border-color: gray;
+  }
+  #off3 {
+    border-color: gray;
+  }
+}
+.offer-card h1 {
+  color: #f43f5e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.offer-card .offer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.offer-card .offer input[type="radio"] {
+  margin-right: 10px;
+}
+.offer-card .offer .badge {
+  background-color: #f43f5e;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.offer-card .offer .most-popular {
+  color: #f43f5e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 1000;
+  margin-left: auto;
+}
+.offer-card .details {
+  border: 2px solid #f43f5e;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.offer-card .details .discount-badge {
+  background-color: #f43f5e;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 5px;
+}
+.offer-card .details .old-price {
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+.offer-card select {
+  border: 1px solid #e5e7eb;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+.offer-card .free-delivery {
+  color: #f43f5e;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: left;
+}
+.offer-card .total-price {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.offer-card .add-to-cart {
+  background-color: #f43f5e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.offer-card .powered-by {
+  text-align: center;
+  margin-top: 10px;
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+.offer-card .powered-by a {
+  color: #f43f5e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.offer {
+  label {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    position: relative;
+    &::after {
+      content: normal;
+      position: absolute;
+      opacity: 0.5;
+    }
+  }
+  div {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    * {
+      opacity: 0;
+    }
+  }
+  input {
+    &:checked + label + div {
+      max-height: 100vh;
+      visibility: visible;
+      opacity: 1;
+      * {
+        opacity: 1;
+      }
+    }
+    &:checked + label::after {
+      content: normal;
+    }
+  }
+}
